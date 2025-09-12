@@ -1,29 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up/Log In</title>
-    <link rel="stylesheet" href="signup.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TROVE – Create Account</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Satisfy&display=swap" rel="stylesheet" />
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="signup.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
 </head>
+
 <body>
-    <div class="container">
-        <h2>Sign Up / Log In</h2>
-        <form action="/submit" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+  <!-- Floating background decorations -->
+  <div class="background-elements">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+  <!-- Signup card -->
+  <div class="signup-container">
+    <div class="decorative-corner top-left"></div>
+    <div class="decorative-corner bottom-right"></div>
+    <div class="gift-icon"></div>
 
-            <button type="submit">Submit</button>
-        </form>
-        <div class="card">
-            <h3>hello There</h3>
+    <h1>TROVE</h1>
+    <p class="tagline">Join the Gifting Community ✨</p>
+
+    <form id="signupForm" action="#" method="post">
+      <div class="form-row">
+        <div class="form-group half">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="John" required autocomplete="given-name" />
         </div>
-        
-        
-    </div>
-    
+        <div class="form-group half">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Doe" required autocomplete="family-name" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="new-password" />
+        <div class="password-strength" id="passwordStrength"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required autocomplete="new-password" />
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="terms" name="terms" required />
+          <span class="checkmark"></span>
+          I agree to the <a href="#" target="_blank">Terms & Conditions</a> and <a href="#" target="_blank">Privacy Policy</a>
+        </label>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="newsletter" name="newsletter" />
+          <span class="checkmark"></span>
+          Send me gift recommendations and special offers
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Create Account & Start Gifting</button>
+
+      <div class="form-footer">
+        <span>Already have an account?</span> <a href="login.html">Sign In</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Script for form interactions -->
+  <script>
+    // Form submission with loading state
+    document.getElementById('signupForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.submit-btn');
+      btn.classList.add('loading');
+      setTimeout(() => {
+        btn.classList.remove('loading');
+        alert('Welcome to TROVE! 🎉 Your account has been created!');
+      }, 2500);
+    });
+
+    // Password strength indicator
+    document.getElementById('password').addEventListener('input', e => {
+      const password = e.target.value;
+      const strengthDiv = document.getElementById('passwordStrength');
+      let strength = 0;
+      let message = '';
+      
+      if (password.length >= 8) strength++;
+      if (/[A-Z]/.test(password)) strength++;
+      if (/[0-9]/.test(password)) strength++;
+      if (/[^A-Za-z0-9]/.test(password)) strength++;
+      
+      switch (strength) {
+        case 0:
+        case 1: message = 'Weak'; strengthDiv.className = 'password-strength weak'; break;
+        case 2: message = 'Fair'; strengthDiv.className = 'password-strength fair'; break;
+        case 3: message = 'Good'; strengthDiv.className = 'password-strength good'; break;
+        case 4: message = 'Strong'; strengthDiv.className = 'password-strength strong'; break;
+      }
+      
+      strengthDiv.textContent = password ? `Password strength: ${message}` : '';
+    });
+
+    // Confirm password matching
+    document.getElementById('confirmPassword').addEventListener('input', e => {
+      const password = document.getElementById('password').value;
+      const confirmPassword = e.target.value;
+      
+      if (confirmPassword && password !== confirmPassword) {
+        e.target.style.borderColor = '#dc2626';
+        e.target.style.boxShadow = '0 0 0 4px rgba(220, 38, 38, 0.15)';
+      } else {
+        e.target.style.borderColor = '';
+        e.target.style.boxShadow = '';
+      }
+    });
+  </script>
 </body>
 </html>

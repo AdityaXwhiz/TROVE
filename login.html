@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - TROVE</title>
-    <!-- Google Fonts: Satisfy for the brand, Poppins for the body -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Satisfy&display=swap" rel="stylesheet">
-    <!-- Link to your external CSS file -->
-    <link rel="stylesheet" href="login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TROVE – Sign In</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Satisfy&display=swap" rel="stylesheet" />
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="login.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
 </head>
+
 <body>
+  <!-- Floating background decorations -->
+  <div class="background-elements">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
 
-    <!-- Decorative Elements that float in the background -->
-    <div class="background-elements">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-    </div>
+  <!-- Login card -->
+  <div class="login-container">
+    <div class="decorative-corner top-left"></div>
+    <div class="decorative-corner bottom-right"></div>
+    <div class="gift-icon"></div>
 
-    <!-- Login Card -->
-    <div class="login-container">
-        <h1>TROVE</h1>
-        <p>Welcome back! Sign in to continue.</p>
-        
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required>
-            </div>
-            
-            <button type="submit" class="submit-btn">Sign In</button>
-            
-            <div class="form-footer">
-                <span>Don't have an account?</span> <a href="#">Sign Up</a>
-            </div>
-        </form>
-    </div>
+    <h1>TROVE</h1>
+    <p class="tagline">Discover • Gift • Celebrate ✨</p>
 
+    <form id="loginForm" action="#" method="post">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password" />
+      </div>
+
+      <button type="submit" class="submit-btn">Sign In & Start Gifting</button>
+
+      <div class="form-footer">
+        <span>New to TROVE?</span> <a href="signup.html">Create Account</a><br /><br />
+        <a href="#">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Optional: small script for button loader -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.submit-btn');
+      btn.classList.add('loading');
+      setTimeout(() => {
+        btn.classList.remove('loading');
+        alert('Welcome to TROVE! 🎁');
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
-

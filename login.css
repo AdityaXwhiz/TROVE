@@ -1,173 +1,189 @@
-/* CSS Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ====== Reset ====== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Main Body Styling */
+/* ====== Layout ====== */
 body {
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #fff0f5, #ffe4e1); /* Soft Pink Gradient */
-    overflow: hidden; /* Prevent scrollbars from decorative elements */
-    color: #333;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffb3ba 0%, #ffdfdf 50%, #ffeaa7 100%); /* Lighter background */
+  color: #333;
+  overflow: hidden;
+  position: relative;
 }
 
-/* Decorative Background Elements */
-.background-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+/* Faint dotted pattern */
+body::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255,182,193,.08) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(255,105,180,.08) 0%, transparent 40%);
+  z-index: 0;
 }
+
+/* ====== Background floaters ====== */
+.background-elements { position: absolute; inset: 0; z-index: 1; }
 
 .background-elements span {
-    position: absolute;
-    list-style: none;
-    display: block;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    animation: float-up 25s linear infinite;
-    bottom: -150px;
+  position: absolute; bottom: -200px;
+  animation: float-up 25s linear infinite;
 }
 
-/* Different sizes and positions for the floating circles */
-.background-elements span:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
-.background-elements span:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
-.background-elements span:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
-.background-elements span:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
-.background-elements span:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
-.background-elements span:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; background: rgba(220, 20, 60, 0.1); }
-.background-elements span:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; background: rgba(255, 105, 180, 0.1); }
-.background-elements span:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
-.background-elements span:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
-.background-elements span:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; background: rgba(220, 20, 60, 0.15); }
+/* Ten themed elements (gift boxes, hearts, stars, bubbles) */
+.background-elements span:nth-child(1){left:15%;width:30px;height:30px;background:linear-gradient(45deg,#ff6b6b,#ee5a52);border-radius:6px;animation-duration:20s;}
+.background-elements span:nth-child(2){left:85%;width:20px;height:20px;background:#ff69b4;border-radius:50%;animation-delay:3s;animation-duration:25s;}
+.background-elements span:nth-child(3){left:60%;width:25px;height:25px;background:linear-gradient(45deg,#ffd700,#ffb347);border-radius:6px;animation-delay:6s;animation-duration:30s;}
+.background-elements span:nth-child(4){left:30%;width:40px;height:40px;background:#ff1493;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation-delay:2s;animation-duration:35s;}
+.background-elements span:nth-child(5){left:75%;width:35px;height:35px;background:linear-gradient(45deg,#ff6b6b,#4ecdc4);border-radius:8px;animation-delay:8s;animation-duration:28s;}
+.background-elements span:nth-child(6){left:10%;width:30px;height:30px;background:#ff69b4;transform:rotate(-45deg);animation-delay:4s;animation-duration:22s;}
+.background-elements span:nth-child(6)::before,
+.background-elements span:nth-child(6)::after{
+  content:'';position:absolute;width:30px;height:30px;background:#ff69b4;border-radius:15px 15px 0 0;
+}
+.background-elements span:nth-child(6)::before{left:15px;transform:rotate(-45deg);transform-origin:0 100%;}
+.background-elements span:nth-child(6)::after{left:0;transform:rotate(45deg);transform-origin:100% 100%;}
+.background-elements span:nth-child(7){left:50%;width:28px;height:28px;background:linear-gradient(45deg,#ff8a80,#ff5722);border-radius:50%;animation-delay:10s;animation-duration:26s;}
+.background-elements span:nth-child(8){left:90%;width:32px;height:32px;background:#ffd700;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation-delay:12s;animation-duration:24s;}
+.background-elements span:nth-child(9){left:25%;width:22px;height:22px;background:linear-gradient(45deg,#e91e63,#9c27b0);border-radius:6px;animation-delay:14s;animation-duration:32s;}
+.background-elements span:nth-child(10){left:65%;width:26px;height:26px;background:#00bcd4;border-radius:50%;animation-delay:16s;animation-duration:29s;}
 
-/* Floating Animation */
-@keyframes float-up {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 50%;
-    }
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
+@keyframes float-up{
+  0%{transform:translateY(0) rotate(0) scale(.8);opacity:.9;}
+  50%{transform:translateY(-600px) rotate(180deg) scale(1);opacity:.6;}
+  100%{transform:translateY(-1200px) rotate(360deg) scale(.8);opacity:0;}
 }
 
-/* Login Card Styling */
-.login-container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.6); /* Frosted glass effect */
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/* ====== Login card ====== */
+.login-container{
+  position:relative; z-index:2;
+  width:100%; max-width:420px;
+  padding:50px 40px 40px;
+  /* Subtle gradient background instead of plain white */
+  background: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(254,254,254,0.95) 50%, rgba(253,253,253,0.98) 100%);
+  border:2px solid rgba(255,255,255,.4);
+  border-radius:25px;
+  /* Red-tinted box shadows */
+  box-shadow: 
+    0 25px 50px rgba(220, 38, 38, 0.15),
+    0 10px 25px rgba(239, 68, 68, 0.1),
+    0 0 0 1px rgba(255,255,255,.6),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  text-align:center;
+  transition:transform .4s ease, box-shadow .4s ease;
+  backdrop-filter: blur(10px);
+}
+.login-container:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 35px 70px rgba(220, 38, 38, 0.2),
+    0 15px 35px rgba(239, 68, 68, 0.15),
+    0 0 0 1px rgba(255,255,255,.7),
+    inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
-/* Brand Name Header */
-.login-container h1 {
-    font-family: 'Satisfy', cursive;
-    font-size: 5rem; /* Large, stylish font */
-    font-weight: 400;
-    margin-bottom: 10px;
-    background: linear-gradient(45deg, #d4145a, #fbb03b); /* Red to Orange Gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Corners */
+.decorative-corner{
+  position:absolute;width:60px;height:60px;
+  background:linear-gradient(135deg,rgba(239, 68, 68, 0.08),rgba(220, 38, 38, 0.05));
+  border-radius:50%;
 }
+.top-left{top:-30px;left:-30px;}
+.bottom-right{bottom:-30px;right:-30px;}
 
-.login-container p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 30px;
+/* Pulsing gift icon */
+.gift-icon{
+  position:absolute;top:-40px;left:50%;transform:translateX(-50%);
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,#ff6b6b,#ee5a52);
+  display:flex;align-items:center;justify-content:center;
+  /* Red-tinted shadows for gift icon too */
+  box-shadow:
+    0 10px 30px rgba(220, 38, 38, 0.35),
+    0 5px 15px rgba(239, 68, 68, 0.25),
+    0 0 0 4px rgba(255,255,255,.9);
+  animation:pulse 2s ease-in-out infinite;
 }
+.gift-icon::before{content:'🎁';font-size:2.5rem;line-height:1;}
+@keyframes pulse{0%,100%{transform:translateX(-50%) scale(1);}50%{transform:translateX(-50%) scale(1.05);}}
 
-/* Form Group Styling */
-.form-group {
-    position: relative;
-    margin-bottom: 25px;
-    text-align: left;
+/* Brand */
+h1{
+  font-family:'Satisfy',cursive;
+  font-size:3.5rem;font-weight:400;margin:20px 0 10px;
+  background:linear-gradient(135deg,#ff6b6b,#ee5a52,#ff8a80);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
 }
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #333;
+h1::after{
+  content:'✨';position:absolute;right:-20px;top:0;
+  font-size:1.5rem;animation:sparkle 1.5s ease-in-out infinite alternate;
 }
+@keyframes sparkle{0%{opacity:.5;transform:scale(.8);}100%{opacity:1;transform:scale(1.2);}}
 
-.form-group input {
-    width: 100%;
-    padding: 12px 15px;
-    font-size: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+/* Tagline */
+.tagline{font-size:.95rem;color:#666;margin-bottom:35px;}
+
+/* Form */
+.form-group{margin-bottom:25px;text-align:left;}
+.form-group label{display:block;margin-bottom:8px;font-weight:500;color:#444;font-size:.9rem;}
+.form-group input{
+  width:100%;padding:15px 20px;font-size:1rem;font-family:'Poppins',sans-serif;
+  border:2px solid rgba(220, 38, 38, 0.15);border-radius:15px;
+  background:rgba(255,255,255,.9);transition:.3s;
+  /* Subtle red-tinted shadow on inputs */
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.05);
 }
-
-.form-group input:focus {
-    border-color: #d4145a;
-    box-shadow: 0 0 0 3px rgba(212, 20, 90, 0.2);
+.form-group input:focus{
+  border-color:#dc2626;
+  box-shadow:
+    0 0 0 4px rgba(220, 38, 38, 0.1),
+    0 4px 12px rgba(220, 38, 38, 0.08);
+  background:rgba(255,255,255,.98);
 }
+.form-group input::placeholder{color:#aaa;}
 
-/* Submit Button Styling */
-.submit-btn {
-    width: 100%;
-    padding: 14px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(45deg, #d4145a, #fbb03b);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 5px 15px rgba(212, 20, 90, 0.3);
+/* Button */
+.submit-btn{
+  width:100%;padding:16px;font-size:1.1rem;font-weight:600;
+  color:#fff;border:none;border-radius:15px;
+  background:linear-gradient(135deg,#ff6b6b,#ee5a52,#ff8a80);
+  cursor:pointer;transition:.3s;
+  /* Enhanced red box shadow for button */
+  box-shadow: 
+    0 8px 25px rgba(220, 38, 38, 0.35),
+    0 4px 12px rgba(239, 68, 68, 0.25);
+  position:relative;overflow:hidden;
 }
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(212, 20, 90, 0.4);
+.submit-btn:hover{
+  transform:translateY(-3px);
+  box-shadow: 
+    0 12px 35px rgba(220, 38, 38, 0.45),
+    0 6px 18px rgba(239, 68, 68, 0.35);
 }
-
-/* Footer Links Styling */
-.form-footer {
-    margin-top: 25px;
-    font-size: 0.9rem;
+.submit-btn:active{transform:translateY(0);}
+.submit-btn.loading{pointer-events:none;color:transparent;}
+.submit-btn.loading::after{
+  content:'';position:absolute;top:50%;left:50%;width:20px;height:20px;
+  margin:-10px;border:2px solid #fff;border-radius:50%;border-top-color:transparent;
+  animation:spin 1s linear infinite;
 }
+@keyframes spin{to{transform:rotate(360deg);}}
 
-.form-footer a {
-    color: #d4145a;
-    text-decoration: none;
-    font-weight: 500;
-    transition: text-decoration 0.3s;
+/* Footer */
+.form-footer{margin-top:30px;font-size:.9rem;color:#666;}
+.form-footer a{
+  color:#dc2626;font-weight:600;text-decoration:none;transition:.3s;
+  /* Removed the ::before emoji decoration */
 }
+.form-footer a:hover{color:#b91c1c;text-decoration:underline;}
 
-.form-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 480px) {
-    .login-container {
-        padding: 30px;
-    }
-    .login-container h1 {
-        font-size: 4rem;
-    }
+/* ====== Responsive ====== */
+@media (max-width:480px){
+  .login-container{margin:20px;padding:40px 30px 30px;border-radius:20px;}
+  .login-container:hover{transform:none;}
+  h1{font-size:2.8rem;}
+  .gift-icon{width:70px;height:70px;top:-35px;}
+  .gift-icon::before{font-size:2rem;}
 }
