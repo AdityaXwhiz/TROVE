@@ -175,7 +175,7 @@ h1::after{
 .form-footer{margin-top:30px;font-size:.9rem;color:#666;}
 .form-footer a{
   color:#dd2222;font-weight:600;text-decoration:none;transition:.3s;
-  /* Removed the ::before emoji decoration */
+  /* Removed the ::before emoji decoration */n
 }
 .form-footer a:hover{color:#b91c1c;text-decoration:underline;}
 
