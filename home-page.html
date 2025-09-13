@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TROVE - Discover Perfect Gifts for Every Occasion</title>
+    <meta name="description" content="Find the perfect gift for every occasion at TROVE. Curated collections of unique gifts for birthdays, anniversaries, holidays and more.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="home.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <a href="#home">
+                    <span class="logo-icon">🎁</span>
+                    <span class="logo-text">TROVE</span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#categories" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#birthday">🎂 Birthday Gifts</a>
+                        <a href="#anniversary">💝 Anniversary</a>
+                        <a href="#wedding">💒 Wedding</a>
+                        <a href="#holiday">🎄 Holiday Gifts</a>
+                        <a href="#corporate">🏢 Corporate</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#shop" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#for-him">👨 For Him</a>
+                        <a href="#for-her">👩 For Her</a>
+                        <a href="#for-kids">🧒 For Kids</a>
+                        <a href="#couples">💕 For Couples</a>
+                        <a href="#luxury">✨ Luxury Gifts</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Right side buttons -->
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search gifts...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <a href="login.html" class="nav-btn login-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Login</span>
+                </a>
+                <a href="#cart" class="nav-btn cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+            <!-- Mobile menu toggle -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Find the Perfect Gift for Every Occasion</h1>
+                <p>Curated collections of unique, thoughtful gifts that create lasting memories. From birthdays to holidays, we help you discover the perfect present.</p>
+                <div class="hero-buttons">
+                    <a href="#categories" class="btn btn-primary">Shop Now</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="gift-showcase">
+                    <div class="floating-gift gift-1">🎁</div>
+                    <div class="floating-gift gift-2">💝</div>
+                    <div class="floating-gift gift-3">🎀</div>
+                    <div class="floating-gift gift-4">✨</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Free Shipping</h3>
+                    <p>Free delivery on orders over $50</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Curated Selection</h3>
+                    <p>Hand-picked gifts for every occasion</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Gift Wrapping</h3>
+                    <p>Beautiful packaging included</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>24/7 Support</h3>
+                    <p>Here to help with your gifting needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop by Occasion</h2>
+                <p>Find the perfect gift for any celebration</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">🎂</div>
+                    <div class="category-content">
+                        <h3>Birthday Gifts</h3>
+                        <p>Make their special day unforgettable</p>
+                        <a href="#" class="category-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card featured">
+                    <div class="category-image">💝</div>
+                    <div class="category-content">
+                        <h3>Anniversary</h3>
+                        <p>Celebrate love and milestones</p>
+                        <a href="#" class="category-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">🎄</div>
+                    <div class="category-content">
+                        <h3>Holiday Gifts</h3>
+                        <p>Spread joy throughout the seasons</p>
+                        <a href="#" class="category-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">💒</div>
+                    <div class="category-content">
+                        <h3>Wedding</h3>
+                        <p>Perfect presents for the happy couple</p>
+                        <a href="#" class="category-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Gifts Section -->
+    <section class="popular-gifts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trending Gifts</h2>
+                <p>Most loved gifts by our customers</p>
+            </div>
+            <div class="gifts-grid">
+                <div class="gift-card">
+                    <div class="gift-image">
+                        <div class="placeholder-image">📱</div>
+                        <div class="gift-badge">Popular</div>
+                    </div>
+                    <div class="gift-info">
+                        <h4>Tech Accessories</h4>
+                        <p class="gift-price">From $25</p>
+                        <div class="gift-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(128)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gift-card">
+                    <div class="gift-image">
+                        <div class="placeholder-image">🕯️</div>
+                        <div class="gift-badge new">New</div>
+                    </div>
+                    <div class="gift-info">
+                        <h4>Luxury Candles</h4>
+                        <p class="gift-price">From $35</p>
+                        <div class="gift-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gift-card">
+                    <div class="gift-image">
+                        <div class="placeholder-image">👝</div>
+                    </div>
+                    <div class="gift-info">
+                        <h4>Designer Bags</h4>
+                        <p class="gift-price">From $120</p>
+                        <div class="gift-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(203)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gift-card">
+                    <div class="gift-image">
+                        <div class="placeholder-image">📚</div>
+                    </div>
+                    <div class="gift-info">
+                        <h4>Books & Journals</h4>
+                        <p class="gift-price">From $15</p>
+                        <div class="gift-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-count">(156)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Updated with Gift Ideas</h2>
+                    <p>Get the latest trends, seasonal collections, and exclusive offers delivered to your inbox.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🎁</span>
+                        <span class="logo-text">TROVE</span>
+                    </div>
+                    <p>Discover perfect gifts for every occasion. Creating memorable moments through thoughtful gifting.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Birthday Gifts</a></li>
+                        <li><a href="#">Anniversary</a></li>
+                        <li><a href="#">Wedding</a></li>
+                        <li><a href="#">Holiday Gifts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TROVE. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>
