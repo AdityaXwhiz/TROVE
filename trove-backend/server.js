@@ -10,6 +10,10 @@ const PORT = process.env.PORT || 3001;
 // Get the MongoDB connection string from the .env file
 const MONGO_URI = process.env.MONGO_URI;
 
+// --- DIAGNOSTIC LINE ---
+console.log("Attempting to connect with URI:", MONGO_URI); 
+// -------------------------
+
 // --- Database Connection ---
 mongoose.connect(MONGO_URI)
   .then(() => {
@@ -20,19 +24,14 @@ mongoose.connect(MONGO_URI)
   });
 // -------------------------
 
-// --- Middleware ---
-// This allows your server to understand JSON format
-app.use(express.json());
-// ------------------
+// (The rest of your file stays the same...)
 
-// --- Routes ---
-// A simple test route to make sure the server is working
+app.use(express.json());
+
 app.get('/api', (req, res) => {
   res.json({ message: "Welcome to the TROVE API! The server is running." });
 });
-// --------------
 
-// --- Start the Server ---
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
