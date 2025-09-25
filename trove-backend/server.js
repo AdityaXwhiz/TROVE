@@ -3,16 +3,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config(); // This loads the variables from .env into process.env
 
+// Import the auth routes
+const authRoutes = require('./routes/auth');
+
 // Initialize the Express app
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Get the MongoDB connection string from the .env file
 const MONGO_URI = process.env.MONGO_URI;
-
-// --- DIAGNOSTIC LINE ---
-console.log("Attempting to connect with URI:", MONGO_URI); 
-// -------------------------
 
 // --- Database Connection ---
 mongoose.connect(MONGO_URI)
@@ -24,14 +23,20 @@ mongoose.connect(MONGO_URI)
   });
 // -------------------------
 
-// (The rest of your file stays the same...)
+// --- Middleware ---
+app.use(express.json()); // This allows your server to understand JSON
 
-app.use(express.json());
+// --- Routes ---
+// Use the auth routes for any request starting with /api/auth
+app.use('/api/auth', authRoutes);
 
+// A simple test route to make sure the server is working
 app.get('/api', (req, res) => {
   res.json({ message: "Welcome to the TROVE API! The server is running." });
 });
+// --------------
 
+// --- Start the Server ---
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
