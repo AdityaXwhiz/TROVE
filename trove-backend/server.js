@@ -1,6 +1,7 @@
 // Import required packages
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); // Import the cors package
 require('dotenv').config(); // This loads the variables from .env into process.env
 
 // Import the auth routes
@@ -24,6 +25,7 @@ mongoose.connect(MONGO_URI)
 // -------------------------
 
 // --- Middleware ---
+app.use(cors()); // Use cors to allow cross-origin requests
 app.use(express.json()); // This allows your server to understand JSON
 
 // --- Routes ---
